@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Font Awesome CDN for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
+</head>
+<body>
+  <div class="container">
+    <div class="form-container">
+      <div class="logo">BAC</div>
+      <h2>Sign up and join the experience</h2>
+
+      <form>
+        <input type="text" placeholder="First Name" required />
+        <input type="text" placeholder="Last Name" required />
+        <input type="email" placeholder="Email" required />
+
+        <!-- Password -->
+        <div class="password-container">
+          <input type="password" id="password" placeholder="Password" required />
+          <i class="fas fa-eye toggle-icon" onclick="togglePassword('password', this)"></i>
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="password-container">
+          <input type="password" id="confirmPassword" placeholder="Confirm Password" required />
+          <i class="fas fa-eye toggle-icon" onclick="togglePassword('confirmPassword', this)"></i>
+        </div>
+
+        <button type="submit" class="submit-btn">Sign Up</button>
+
+        <!-- Sign In Link -->
+        <div class="signin-link">
+          Already have an account? <a href="Signin.html">Sign In</a>
+        </div>
+      </form>
+    </div>
+
+    <div class="graphic-container">
+      <img src="logo.PNG" alt="Illustration" class="side-image" />
+    </div>
+  </div>
+
+  <script>
+    function togglePassword(fieldId, icon) {
+      const input = document.getElementById(fieldId);
+      const isPassword = input.type === "password";
+      input.type = isPassword ? "text" : "password";
+      icon.classList.toggle("fa-eye");
+      icon.classList.toggle("fa-eye-slash");
+    }
+  </script>
+</body>
+</html>
