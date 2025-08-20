@@ -1,0 +1,348 @@
+/*
+  Styles for the Main Application Dashboard
+  Theme: Blue, Black, and White
+*/
+
+:root {
+  /* Consolidated variables from auth.css and Index.css */
+  --bac-blue: #00529b;
+  --bac-dark-blue: #002b4f;
+  --bac-light-gray: #f0f4f8;
+  --bac-white: #ffffff;
+  --bac-gray-border: #dde4ed;
+  --bac-dark-text: #0a1f44;
+  --bac-light-text: #555;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--bac-light-gray);
+  margin: 0;
+  color: var(--bac-dark-text);
+}
+
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  background-color: var(--bac-dark-blue);
+  color: var(--bac-white);
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease;
+}
+
+.mobile-menu-toggle {
+  display: none; /* Hidden by default */
+  background: none;
+  border: none;
+  color: var(--bac-white);
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.sidebar-header {
+  padding: 20px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.sidebar-header .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--bac-white);
+  text-decoration: none;
+}
+
+.sidebar-nav {
+  flex-grow: 1; /* Pushes user-profile to the bottom */
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.sidebar-nav a {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 20px;
+  color: #a7c0d8; /* Lighter blue for inactive links */
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s, color 0.2s;
+  border-left: 4px solid transparent;
+}
+
+.sidebar-nav a:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--bac-white);
+}
+
+.sidebar-nav a.active {
+  background-color: var(--bac-blue);
+  color: var(--bac-white);
+  border-left-color: var(--bac-white);
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+}
+
+.user-profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-info .username {
+  font-weight: bold;
+  display: block;
+  font-size: 14px;
+}
+
+.user-info .logout {
+  font-size: 12px;
+  color: #a7c0d8;
+  text-decoration: none;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  background-color: var(--bac-white);
+  border-bottom: 1px solid var(--bac-gray-border);
+  flex-shrink: 0;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.header h1 {
+  font-size: 28px;
+  margin: 0;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: var(--bac-light-gray);
+  padding: 8px 12px;
+  border-radius: 20px;
+}
+
+.search-bar input {
+  border: none;
+  background: none;
+  outline: none;
+  margin-left: 8px;
+  color: var(--bac-dark-text);
+}
+
+.content-area {
+  padding: 30px;
+  flex: 1;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background-color: var(--bac-white);
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--bac-gray-border);
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: var(--bac-blue);
+}
+
+.card p {
+  color: var(--bac-light-text);
+  line-height: 1.6;
+}
+
+.card-link {
+  color: var(--bac-blue);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.card-link:hover {
+  text-decoration: underline;
+}
+
+.progress-bar {
+  background-color: var(--bac-light-gray);
+  border-radius: 20px;
+  height: 20px;
+  overflow: hidden;
+  margin: 15px 0;
+}
+
+.progress {
+  background-color: var(--bac-blue);
+  height: 100%;
+  color: var(--bac-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  transition: width 0.5s ease-in-out;
+}
+
+/* Table Styles */
+.table-container {
+  background-color: var(--bac-white);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--bac-gray-border);
+  overflow-x: auto; /* For responsiveness */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th, td {
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--bac-gray-border);
+  white-space: nowrap;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .sidebar {
+    width: 80px;
+  }
+  .sidebar-header .logo, .sidebar-nav span, .user-info {
+    display: none;
+  }
+  .sidebar-nav a, .user-profile {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    align-items: center;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1001;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  .sidebar-header {
+    padding: 15px 0;
+  }
+
+  .sidebar-nav {
+    display: none; /* Hide nav by default on mobile */
+    position: absolute;
+    top: 65px; /* Position below the header */
+    left: 0;
+    right: 0;
+    background-color: var(--bac-dark-blue);
+    z-index: 1000;
+  }
+
+  .sidebar-nav.is-open {
+    display: block;
+  }
+
+  .sidebar-nav a {
+    border-left: none;
+  }
+
+  .user-profile {
+    border-top: none;
+  }
+}
+.user-profile {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.user-profile .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #0d6efd;
+}
+
+.user-info .username {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.user-info .logout {
+  font-size: 0.85rem;
+  color: #dc3545;
+  transition: color 0.3s ease;
+}
+
+.user-info .logout:hover {
+  color: #a71d2a;
+}

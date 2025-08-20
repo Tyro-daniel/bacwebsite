@@ -131,6 +131,7 @@ form input:focus {
 }
 
 .submit-btn {
+  display: block;
   width: 100%;
   padding: 14px;
   background: var(--bac-blue);
@@ -141,6 +142,8 @@ form input:focus {
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s;
+  text-align: center;
+  text-decoration: none;
 }
 
 .submit-btn:hover {

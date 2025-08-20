@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - BACConnect</title>
+    <link rel="stylesheet" href="CSS/dashboard.css" />
+    <!-- Using Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <!-- Sidebar Navigation -->
+      <nav class="sidebar">
+        <div class="sidebar-header">
+          <a href="index.html" class="logo">BACConnect</a>
+          <button class="mobile-menu-toggle" id="mobileMenuToggle">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+        <ul class="sidebar-nav">
+          <li>
+            <a href="#" class="active"
+              ><i class="fa-solid fa-table-columns fa-fw"></i>
+              <span>Dashboard</span></a
+            >
+          </li>
+          <li>
+            <a href="#"
+              ><i class="fa-solid fa-users fa-fw"></i> <span>Alumni</span></a
+            >
+          </li>
+          <li>
+            <a href="#"
+              ><i class="fa-solid fa-calendar-days fa-fw"></i>
+              <span>Events</span></a
+            >
+          </li>
+          <li>
+            <a href="#"
+              ><i class="fa-solid fa-briefcase fa-fw"></i> <span>Jobs</span></a
+            >
+          </li>
+          <li>
+            <a href="#"
+              ><i class="fa-solid fa-comments fa-fw"></i>
+              <span>Messages</span></a
+            >
+          </li>
+        </ul>
+        <div class="user-profile d-flex align-items-center">
+          <img
+            src="Assets/Image/Users/default-avatar.png"
+            alt="User Avatar"
+            class="avatar"
+          />
+          <div class="user-info ms-2">
+            <span class="username fw-semibold">Welcome, Arabang</span>
+            <br />
+            <a
+              href="Signin.html"
+              class="logout text-decoration-none text-danger"
+              >Logout</a
+            >
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <header class="header">
+          <div class="header-left">
+            <h1>Dashboard</h1>
+          </div>
+          <div class="header-right">
+            <div class="search-bar">
+              <i class="fa-solid fa-search"></i>
+              <input type="text" placeholder="Search..." />
+            </div>
+            <a href="#" class="action-icon" aria-label="Notifications"
+              ><i class="fa-solid fa-bell"></i
+            ></a>
+          </div>
+        </header>
+        <section class="content-area">
+          <div class="card-grid">
+            <article class="card">
+              <h3>Upcoming Events</h3>
+              <p>You have <strong>3</strong> upcoming events this month.</p>
+            </article>
+            <article class="card">
+              <h3>New Messages</h3>
+              <p><strong>5</strong> unread messages.</p>
+            </article>
+            <article class="card">
+              <h3>Profile Completion</h3>
+              <div class="progress-bar">
+                <div class="progress" style="width: 80%">80%</div>
+              </div>
+              <p>
+                <a href="#" class="card-link">Complete your profile</a>
+                to get better job matches.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Recent Job Postings</h3>
+              <p><strong>12</strong> new jobs match your profile.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="content-area">
+          <h2>Recent Activity</h2>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>User</th>
+                  <th>Action</th>
+                  <th>Details</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Jane Smith</td>
+                  <td>Posted a new job</td>
+                  <td>"Senior Frontend Developer at TechCorp"</td>
+                  <td>2 hours ago</td>
+                </tr>
+                <tr>
+                  <td>John Appleseed</td>
+                  <td>Commented on an event</td>
+                  <td>"Alumni Meetup 2024"</td>
+                  <td>5 hours ago</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="JS/dashboard.js"></script>
+  </body>
+</html>
